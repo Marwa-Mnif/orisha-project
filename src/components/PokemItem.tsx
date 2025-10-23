@@ -15,7 +15,7 @@ export default function PokemonItem() {
      
       
         <a
-          href="{{ product.metafields.custom.notice_du_produit.value.url }}"
+          href="#"
           target="_blank"
           className="tw-text-body-small tw-group tw-absolute tw-bottom-2 tw-right-2 tw-z-[5] tw-flex tw-items-center tw-gap-2 tw-rounded-[2rem] tw-bg-transparent tw-py-1 tw-pl-4 tw-pr-2 tw-font-semibold tw-text-black tw-ring-1 tw-ring-black hover:tw-bg-grey-faint active:tw-bg-grey-light"
         >
@@ -55,35 +55,22 @@ export default function PokemonItem() {
       >
         
           <div className="tw-flex tw-items-center tw-self-end tw-pt-2">
-            <button
-              className="tw-text-body-medium tw-custom-transition-2 tw-z-[5] tw-m-2  tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl tw-border-2 tw-border-grey tw-bg-faint-grey-1 tw-p-2 tw-px-4  tw-font-semibold !tw-leading-6 tw-text-grey    "
-            >
-              LABEL
+             <button
+            className="tw-text-body-medium tw-custom-transition-2 tw-z-[5] tw-m-2 tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl  tw-border-grey tw-bg-faint-grey-1 tw-p-2 tw-font-semibold !tw-leading-6  tw-text-grey    hover:tw-bg-grey-copy active:tw-bg-grey-copy"
+          >
+              En savoir plus 
             </button>
           </div>
         <div
           className="tw-flex tw-items-center tw-self-end tw-pt-2"
         >
           <button
-            className="tw-text-body-medium tw-custom-transition-2 tw-z-[5] tw-m-2 tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl   tw-bg-blue1 tw-p-2 tw-pr-4 tw-font-semibold !tw-leading-6 tw-text-white   hover:tw-bg-blue-mid active:tw-bg-blue-deep"
+            className="tw-text-body-medium tw-custom-transition-2 tw-z-[5] tw-m-2 tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl   tw-bg-blue1 tw-p-2  tw-font-semibold !tw-leading-6 tw-text-white   hover:tw-bg-blue-mid active:tw-bg-blue-deep"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="tw-size-5 tw-shrink-0 tw-animate-spin"
-            >
-              <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
-            </svg>
+            
            
 
-            CTA LABEL
+            Ajouter au favoris
           </button>
         </div>
       </div>
