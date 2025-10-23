@@ -1,16 +1,6 @@
 import type { CharactersResponse } from '../types/character';
-
-const BASE_URL = 'https://rickandmortyapi.com/api';
-
-function buildQueryWithSearchParams(params: Record<string, string | number | undefined>) {
-  const entries = Object.entries(params);
-  const filtered = entries.filter(([_, value]) => value !== undefined && value !== null && String(value).length > 0);
-  const queryString = filtered
-    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`)
-    .join('&');
-  return queryString ? `?${queryString}` : '';
-}
-
+import { buildQueryWithSearchParams } from '../utils';
+import { API_BASE_URL } from '../constants';
 
 export async function fetchAllCharacters(
   {
@@ -31,13 +21,13 @@ export async function fetchAllCharacters(
     gender: filters?.gender,
   };
 
-  const url = `${BASE_URL}/character${buildQueryWithSearchParams(params)}`;
+  const url = `${API_BASE_URL}/character${buildQueryWithSearchParams(params)}`;
 
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      const text = await response.text().catch(() => response.statusText);
-      throw new Error(`API error ${response.status}: ${text}`);
+      const returnedText = await response.text().catch(() => response.statusText);
+      throw new Error(`API error ${response.status}: ${returnedText}`);
     }
     return (await response.json()) as CharactersResponse;
   } catch (err: unknown) {
