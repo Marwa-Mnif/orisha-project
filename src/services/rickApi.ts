@@ -1,4 +1,5 @@
 import type { CharactersResponse } from '../types/character';
+import { Filters } from '../types/filters';
 import { buildQueryWithSearchParams } from '../utils';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
@@ -10,7 +11,7 @@ export async function fetchAllCharacters(
   }: {
     page?: number;
     name?: string;
-    filters?: { status?: string; species?: string; gender?: string };
+    filters?: Filters;
   }
 ): Promise<CharactersResponse> {
   const params: Record<string, string | number | undefined> = {
