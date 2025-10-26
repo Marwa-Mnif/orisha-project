@@ -1,6 +1,7 @@
 import React from "react";
 import { Character } from "../types/character";
 import FavoriteButton from "./FavoriteButton";
+import { Link } from "react-router-dom";
 type PokemItemProps = {
   character: Character;
 };
@@ -54,21 +55,14 @@ export default function PokemonItem({ character }: PokemItemProps) {
         </div>
         <div className="tw-flex tw-flex-row {% unless  product.template_suffix == ''  %} tw-justify-center {% else  %} tw-justify-end {% endunless %} tw-gap-2">
           <div className="tw-flex tw-items-center tw-self-end tw-pt-2">
-            <a
-              href="#"
+            <Link
+              to={`/character/${character.id}`}
               className=" tw-z-[5]  tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl  tw-border-grey tw-bg-faint-grey-1 tw-p-2    hover:tw-bg-grey-copy active:tw-bg-grey-copy"
             >
               <div className=" tw-text-body-micro-desktop tw-text-center tw-text-grey tw-font-semibold !tw-leading-6   ">
                 En savoir Plus
               </div>
-            </a>
-          </div>
-          <div className="tw-flex tw-items-center tw-self-end tw-pt-2">
-            <button className="   tw-z-[5]  tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl   tw-bg-blue1 tw-p-2   hover:tw-bg-blue-mid active:tw-bg-blue-deep">
-              <div className="tw-text-body-micro-desktop tw-text-center tw-text-white  tw-font-semibold !tw-leading-6   ">
-                Ajouter au favoris
-              </div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
