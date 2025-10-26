@@ -1,7 +1,7 @@
 import type { CharactersResponse } from '../types/character';
 import { buildQueryWithSearchParams } from '../utils';
-import { API_BASE_URL } from '../constants';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 export async function fetchAllCharacters(
   {
     page,
