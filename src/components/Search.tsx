@@ -1,16 +1,22 @@
 import React from "react";
+import searchIcon from "../assets/search.svg";
 type SearchProps = {
   search: string;
   setSearch: (search: string) => void;
 };
 export default function Search({ search, setSearch }: SearchProps) {
   return (
-    <input
-      type="text"
-      placeholder="Search for a character..."
-      value={search}
-      onChange={(e) => setSearch(e.target.value)}
-      className=" tw-text-center tw-rounded-3xl tw-border-[2px] tw-bg-white tw-border-[#e5e7eb] tw-text-grey-copy tw-w-64 tw-p-2  tw-mb-4"
-    />
+    <div className="tw-mx-12 lg:tw-px-0 tw-relative  lg:tw-w-80">
+      <input
+        type="text"
+        placeholder="Search for a character..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className=" tw-w-full tw-pl-10 tw-pr-3 tw-py-2 tw-border tw-rounded-lg tw-focus:tw-outline-none tw-focus:tw-ring-2 tw-focus:tw-ring-blue-500"
+      />
+      <div className="tw-absolute tw-left-3 tw-top-1/2 tw-transform tw--translate-y-1/2 tw-text-gray-400">
+        <img className="tw-h-5 tw-w-5" src={searchIcon} alt="searchIcon" />
+      </div>
+    </div>
   );
 }

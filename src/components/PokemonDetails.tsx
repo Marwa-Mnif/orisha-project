@@ -3,6 +3,7 @@ import { useOneCharacter } from "../hooks/useOneCharacter";
 import FavoriteButton from "../components/FavoriteButton";
 import React from "react";
 import FullPageLoader from "./FullPageLoader";
+import ErrorPage from "./ErrorPage";
 
 export default function PokemonDetail() {
   const { id } = useParams<{ id: string }>();
@@ -11,8 +12,7 @@ export default function PokemonDetail() {
   const navigate = useNavigate();
 
   if (loading) return <FullPageLoader />;
-  if (error)
-    return <div className="tw-text-center tw-p-8 tw-text-red-500">{error}</div>;
+  if (error) return <ErrorPage message="Failed to load characters." />;
   if (!character)
     return <div className="tw-text-center tw-p-8">Character not found</div>;
 

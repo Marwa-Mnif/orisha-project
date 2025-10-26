@@ -19,8 +19,8 @@ export default function Sidebar({ filters, onChange }: SidebarProps) {
   };
 
   return (
-    <div className=" tw-sticky tw-basis-[21.5%] lg:tw-block">
-      <div className=" tw-w-64 tw-p-4 tw-sticky tw-top-4 tw-h-[calc(100vh-1rem)] tw-overflow-auto  tw-flex  tw-flex-col tw-rounded-3xl tw-border-[2px] tw-bg-white tw-text-grey-copy   tw-min-w-min ">
+    <div className="tw-mx-auto  tw-sticky tw-px-4 tw-basis-[21.5%] lg:tw-block">
+      <div className=" lg:tw-w-64 tw-p-4 tw-sticky tw-top-4 tw-max-w-[calc(100vw-1rem)]  lg:tw-h-[calc(100vh-1rem)] tw-overflow-auto  tw-flex md:tw-flex-row tw-gap-3 lg:tw-gap-0 md:tw-gap-3 tw-flex-row lg:tw-flex-col tw-rounded-3xl tw-border-[2px] tw-bg-white tw-text-grey-copy   tw-min-w-min ">
         <div>
           <h3 className="tw-font-bold tw-mb-2">Status</h3>
           {statusOptions.map((status) => (

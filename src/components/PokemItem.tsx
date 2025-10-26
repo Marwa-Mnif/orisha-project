@@ -2,6 +2,7 @@ import React from "react";
 import { Character } from "../types/character";
 import FavoriteButton from "./FavoriteButton";
 import { Link } from "react-router-dom";
+import gotoSvg from "../assets/goto.svg";
 type PokemItemProps = {
   character: Character;
 };
@@ -9,8 +10,12 @@ export default function PokemonItem({ character }: PokemItemProps) {
   return (
     <div className=" tw-flex-1 tw-relative  tw-w-full tw-flex-col tw-rounded-[2rem] tw-border-2 tw-border-transparent tw-p-2 hover:tw-border-grey-faint hover:tw-bg-white hover:tw-shadow-sm">
       <div className="tw-relative tw-flex tw-aspect-[0.8] tw-w-full tw-shrink-0 tw-flex-col tw-overflow-hidden tw-rounded-3xl tw-bg-faint-grey-1">
-        <div className="tw-relative tw-w-full">
-          <img src={character?.image} alt={character?.name} />
+        <div className="tw-relative tw-w-full tw-object-cover">
+          <img
+            className="tw-w-full tw-object-cover"
+            src={character?.image}
+            alt={character?.name}
+          />
         </div>
         <div className="tw-absolute tw-top-2 tw-right-2">
           <FavoriteButton characterId={character.id} />
@@ -57,11 +62,12 @@ export default function PokemonItem({ character }: PokemItemProps) {
           <div className="tw-flex tw-items-center tw-self-end tw-pt-2">
             <Link
               to={`/character/${character.id}`}
-              className=" tw-z-[5]  tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl  tw-border-grey tw-bg-faint-grey-1 tw-p-2    hover:tw-bg-grey-copy active:tw-bg-grey-copy"
+              className=" tw-z-[5]  tw-flex tw-items-center tw-gap-2 tw-self-end tw-rounded-4xl  tw-border-grey tw-bg-faint-grey-1 tw-p-2 hover:tw-border-2  hover:tw-border-faint-grey-1hover:tw-bg-grey-copy active:tw-bg-grey-copy"
             >
               <div className=" tw-text-body-micro-desktop tw-text-center tw-text-grey tw-font-semibold !tw-leading-6   ">
                 En savoir Plus
               </div>
+              <img className="tw-h-5 tw-w-5" src={gotoSvg} alt="goto" />
             </Link>
           </div>
         </div>
