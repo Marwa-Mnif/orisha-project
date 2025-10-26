@@ -1,5 +1,6 @@
 import React from "react";
 import { Character } from "../types/character";
+import FavoriteButton from "./FavoriteButton";
 type PokemItemProps = {
   character: Character;
 };
@@ -7,8 +8,12 @@ export default function PokemonItem({ character }: PokemItemProps) {
   return (
     <div className=" tw-flex-1 tw-relative  tw-w-full tw-flex-col tw-rounded-[2rem] tw-border-2 tw-border-transparent tw-p-2 hover:tw-border-grey-faint hover:tw-bg-white hover:tw-shadow-sm">
       <div className="tw-relative tw-flex tw-aspect-[0.8] tw-w-full tw-shrink-0 tw-flex-col tw-overflow-hidden tw-rounded-3xl tw-bg-faint-grey-1">
-        <img src={character?.image} alt={character?.name} />
-
+        <div className="tw-relative tw-w-full">
+          <img src={character?.image} alt={character?.name} />
+        </div>
+        <div className="tw-absolute tw-top-2 tw-right-2">
+          <FavoriteButton characterId={character.id} />
+        </div>
         <div className="tw-flex tw-flex-row tw-absolute tw-z-[5]  tw-group tw-gap-2  tw-bottom-4 tw-right-4  tw-items-center tw-justify-center">
           <div
             className={`tw-text-body-small-mobile tw-font-inter  tw-pt-1 tw-pb-1   tw-p-1 tw-flex tw-items-center tw-gap-2 tw-rounded-[3px]  ${

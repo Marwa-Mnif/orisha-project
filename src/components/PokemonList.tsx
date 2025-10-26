@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import { Filters } from "../types/filters";
 import Search from "../components/Search";
 import { useDebouncedSearch } from "../hooks/UseDebouncedSearch";
+import FullPageLoader from "./FullPageLoader";
 
 export default function PokemonList() {
   const [page, setPage] = useState(1);
@@ -21,10 +22,7 @@ export default function PokemonList() {
     debouncedSearch,
     filters
   );
-  if (loading)
-    return (
-      <div className="tw-grid tw-grid-cols-1 tw-gap-4 lg:tw-h-max lg:tw-grid-cols-3"></div>
-    );
+  if (loading) return <FullPageLoader />;
   if (error) return <>Error</>;
 
   return (
