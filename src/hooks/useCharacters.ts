@@ -3,7 +3,7 @@ import type { Character } from '../types/character';
 import { fetchAllCharacters } from '../services/rickApi';
 import { Filters } from '../types/filters';
 
-export function useCharacters(page: number, filters:Filters) {
+export function useCharacters(page: number, name:string, filters:Filters) {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -11,14 +11,14 @@ export function useCharacters(page: number, filters:Filters) {
 
   useEffect(() => {
     setLoading(true);
-    fetchAllCharacters({ page, filters })
+    fetchAllCharacters({ page,name, filters })
       .then((data) => {
         setCharacters(data.results);
         setTotalPages(data.info.pages);
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
-  }, [page, filters]);
+  }, [page, filters, name]);
 
   return { characters, loading, error, totalPages };
 }
