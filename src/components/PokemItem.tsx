@@ -29,7 +29,7 @@ export default function PokemonItem({ character }: PokemItemProps) {
                 : character.species === "Alien"
                 ? "tw-bg-purple-500"
                 : character.species === "Robot"
-                ? "tw-bg-purple-500"
+                ? "tw-bg-slate-800"
                 : "tw-bg-yellow-500"
             }`}
           >

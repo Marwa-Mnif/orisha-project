@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 import Search from "../components/Search";
-import Paginate from "../components/Paginate";
 import PokemonList from "../components/PokemonList";
 import React from "react";
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         <section className="flex-1 flex flex-col gap-4">
           <Search />
           <PokemonList />
-          <Paginate />
         </section>
       </main>
 

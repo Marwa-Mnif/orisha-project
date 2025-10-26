@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PokemonItem from "./PokemItem";
+import Pagination from "../components/Pagination";
 import { useCharacters } from "../hooks/useCharacters";
 
 export default function PokemonList() {
@@ -38,6 +39,11 @@ export default function PokemonList() {
           ))}
         </div>
       </div>
+      <Pagination
+        currentPage={page}
+        totalPages={totalPages}
+        onPageChange={setPage}
+      />
     </div>
   );
 }
