@@ -4,6 +4,7 @@ import { Loader2, MapPin, Globe, Users } from "lucide-react";
 import React from "react";
 import ErrorPage from "../pages/ErrorPage";
 import { BackButton } from "../components/BackButton";
+import { Title } from "../components/Title";
 
 export default function LocationDetails() {
   const { id } = useParams<{ id: string }>();
@@ -26,11 +27,12 @@ export default function LocationDetails() {
 
   return (
     <div className="tw-flex tw-flex-col tw-items-center tw-gap-6 tw-py-12 tw-px-6 tw-max-w-3xl tw-mx-auto">
-      <h1 className="tw-text-4xl tw-font-bold tw-text-blue-600 tw-text-center">
-        {locationData.name}
-      </h1>
+      <Title title="Planets & Places Beyond Time" />
 
       <div className="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-8 tw-w-full tw-space-y-4">
+        <h2 className="tw-text-4xl tw-font-bold tw-text-blue-600 tw-text-center">
+          {locationData.name}
+        </h2>
         <div className="tw-flex tw-items-center tw-gap-3">
           <MapPin className="tw-text-blue-500" />
           <p className="tw-font-semibold">

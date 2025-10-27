@@ -9,6 +9,7 @@ import { getIdFromUrl } from "../utils";
 import { BackButton } from "../components/BackButton";
 import { EpisodesList } from "../components/EpisodesList";
 import FavoriteButton from "../components/FavoriteButton";
+import { Title } from "../components/Title";
 
 export default function PokemonDetails() {
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,7 @@ export default function PokemonDetails() {
   return (
     <div className="tw-container tw-mx-auto tw-px-4 tw-py-10 tw-max-w-4xl">
       <BackButton label="Back to All Characters List" url="/" />
-
+      <Title title="Exploring the DNA of the Multiverse" />
       <motion.div
         className="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-overflow-hidden tw-flex tw-flex-col md:tw-flex-row"
         initial={{ opacity: 0, y: 10 }}

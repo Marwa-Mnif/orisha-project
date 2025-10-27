@@ -8,6 +8,7 @@ import Search from "../components/Search";
 import { useDebouncedSearch } from "../hooks/useDebouncedSearch";
 import FullPageLoader from "./FullPageLoader";
 import ErrorPage from "./ErrorPage";
+import { Title } from "../components/Title";
 
 export default function PokemonList() {
   const [page, setPage] = useState(1);
@@ -30,9 +31,7 @@ export default function PokemonList() {
   return (
     <div className="tw-pt-header tw-bg-grey-faded">
       <div className="tw-flex tw-w-full tw-flex-col tw-items-start tw-justify-between tw-self-stretch tw-px-6 tw-pb-6 tw-pt-10 lg:tw-flex-row lg:tw-p-18 lg:tw-py-10">
-        <h1 className=" tw-text-medium-mobile lg:tw-text-medium-desktop tw-mb-6 tw-mr-8 tw-w-full tw-font-inter tw-font-extrabold tw-text-grey lg:tw-mb-0">
-          Rick And Morty Characters
-        </h1>
+        <Title title="Meet the Multiverse’s Finest" />
       </div>
       <div className="tw-flex tw-items-center tw-justify-center tw-pt-6">
         <Search search={search} setSearch={setSearch} />

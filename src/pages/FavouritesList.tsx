@@ -4,6 +4,7 @@ import { Character } from "../types/character";
 import PokemonItem from "../components/PokemItem";
 import { useFavorites } from "../hooks/useFavourites";
 import { BackButton } from "../components/BackButton";
+import { Title } from "../components/Title";
 
 export default function FavoritesPage() {
   const { favorites } = useFavorites();
@@ -27,9 +28,7 @@ export default function FavoritesPage() {
           {" "}
           <BackButton label="Back" />
         </div>
-        <h1 className="tw-text-4xl tw-font-bold tw-text-blue-600 tw-mb-8 tw-text-center">
-          Your Favorite Characters
-        </h1>
+        <Title title="Across All Universes — Your Picks" />
 
         <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-place-items-center lg:tw-grid-cols-4 tw-gap-1">
           {favorites.map((character: Character) => (
