@@ -1,6 +1,7 @@
-import { LocationDetails } from '../hooks/useLocationDetails';
 import type { Character, CharactersResponse } from '../types/character';
+import { EpisodeDetails } from '../types/episode';
 import { Filters } from '../types/filters';
+import { LocationDetails } from '../types/location';
 import { buildQueryWithSearchParams } from '../utils';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
@@ -64,6 +65,23 @@ try {
     throw new Error(`API error ${res.status}: ${text}`);
   }
   return (await res.json()) as LocationDetails;
+} catch (err: unknown) {
+  if (err instanceof DOMException && err.name === 'AbortError') throw err;
+  if (err instanceof Error) throw new Error(`Network or parsing error: ${err.message}`);
+  throw new Error('Unknown error while fetching character');
+}
+}
+
+
+export async function fetchEpisodesByIds(ids: string): Promise<EpisodeDetails> {
+ const url = `${API_BASE_URL}/episode/${ids}`;
+try {
+  const res = await fetch(url);
+  if (!res.ok) {
+    const text = await res.text().catch(() => res.statusText);
+    throw new Error(`API error ${res.status}: ${text}`);
+  }
+  return (await res.json()) as EpisodeDetails;
 } catch (err: unknown) {
   if (err instanceof DOMException && err.name === 'AbortError') throw err;
   if (err instanceof Error) throw new Error(`Network or parsing error: ${err.message}`);

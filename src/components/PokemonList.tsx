@@ -5,7 +5,7 @@ import { useCharacters } from "../hooks/useCharacters";
 import Sidebar from "./Sidebar";
 import { Filters } from "../types/filters";
 import Search from "../components/Search";
-import { useDebouncedSearch } from "../hooks/UseDebouncedSearch";
+import { useDebouncedSearch } from "../hooks/useDebouncedSearch";
 import FullPageLoader from "./FullPageLoader";
 import ErrorPage from "./ErrorPage";
 

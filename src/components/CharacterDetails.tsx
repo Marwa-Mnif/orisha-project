@@ -7,6 +7,7 @@ import ErrorPage from "../components/ErrorPage";
 import React from "react";
 import { getIdFromUrl } from "../utils";
 import { BackButton } from "./BackButton";
+import { EpisodesList } from "./EpisodesList";
 
 export default function PokemonDetails() {
   const { id } = useParams<{ id: string }>();
@@ -15,6 +16,7 @@ export default function PokemonDetails() {
   if (loading) return <FullPageLoader />;
   if (error || !character)
     return <ErrorPage message="Unable to load character details 😢" />;
+
   console.log("character3003", character);
   return (
     <div className="tw-container tw-mx-auto tw-px-4 tw-py-10 tw-max-w-4xl">
@@ -26,7 +28,7 @@ export default function PokemonDetails() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <div className="tw-w-full md:tw-w-1/2 tw-bg-gray-100 tw-flex tw-items-center tw-justify-center">
+        <div className="tw-w-full md:tw-w-1/2 tw-bg-gray-100 tw-flex tw-items-start tw-justify-center">
           <img
             src={character.image}
             alt={character.name}
@@ -130,7 +132,7 @@ export default function PokemonDetails() {
               )}
             </p>
           </div>
-
+          <EpisodesList character={character} />
           <p className="tw-text-gray-500 tw-text-sm tw-mt-2">
             Created: {new Date(character.created).toLocaleDateString()}
           </p>
