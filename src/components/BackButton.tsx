@@ -1,19 +1,35 @@
-import { Link } from "react-router-dom";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export type BackButtonProps = {
-  label: string;
-  url: string;
+  label?: string;
+  url?: string;
 };
-export function BackButton({ label, url }: BackButtonProps) {
+export function BackButton({ label = "Back", url }: BackButtonProps) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (url) {
+      navigate(url);
+    } else {
+      navigate(-1);
+    }
+  };
   return (
     <div className="tw-mb-4">
-      <Link
-        to={url}
-        className="tw-mt-4 tw-text-blue-600 hover:tw-underline tw-font-medium "
+      <button
+        onClick={handleClick}
+        className="tw-flex tw-items-center tw-gap-2"
       >
-        ← {label}
-      </Link>{" "}
+        <ArrowLeft
+          className="tw-color-blue-600 tw-w-5 tw-h-5"
+          color="#2563eb"
+        />
+        <span className="tw-text-blue-600 tw-font-inter tw-font-medium hover:tw-underline hover:tw-cursor-pointer">
+          {label}
+        </span>
+      </button>
     </div>
   );
 }

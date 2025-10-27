@@ -20,7 +20,7 @@ export default function LocationDetails() {
     return (
       <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-[80vh]">
         <ErrorPage message="Unable to load location details 😢" />
-        <BackButton label="Back to characters" url="/" />
+        <BackButton label="Back to Previous Character" />
       </div>
     );
 
@@ -74,7 +74,7 @@ export default function LocationDetails() {
         </div>
       </div>
 
-      <BackButton label="Back to characters" url="/" />
+      <BackButton label="Back to  Previous Character" />
     </div>
   );
 }
