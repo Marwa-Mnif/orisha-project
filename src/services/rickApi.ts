@@ -1,3 +1,4 @@
+import { LocationDetails } from '../hooks/useLocationDetails';
 import type { Character, CharactersResponse } from '../types/character';
 import { Filters } from '../types/filters';
 import { buildQueryWithSearchParams } from '../utils';
@@ -38,15 +39,31 @@ export async function fetchAllCharacters(
   }
 }
 
-export async function fetchCharacterById(id: number, signal?: AbortSignal): Promise<Character> {
+export async function fetchCharacterById(id: number): Promise<Character> {
  const url = `${API_BASE_URL}/character/${id}`;
 try {
-  const res = await fetch(url, { signal });
+  const res = await fetch(url);
   if (!res.ok) {
     const text = await res.text().catch(() => res.statusText);
     throw new Error(`API error ${res.status}: ${text}`);
   }
   return (await res.json()) as Character;
+} catch (err: unknown) {
+  if (err instanceof DOMException && err.name === 'AbortError') throw err;
+  if (err instanceof Error) throw new Error(`Network or parsing error: ${err.message}`);
+  throw new Error('Unknown error while fetching character');
+}
+}
+
+export async function fetchLocationById(id: number): Promise<LocationDetails> {
+ const url = `${API_BASE_URL}/location/${id}`;
+try {
+  const res = await fetch(url);
+  if (!res.ok) {
+    const text = await res.text().catch(() => res.statusText);
+    throw new Error(`API error ${res.status}: ${text}`);
+  }
+  return (await res.json()) as LocationDetails;
 } catch (err: unknown) {
   if (err instanceof DOMException && err.name === 'AbortError') throw err;
   if (err instanceof Error) throw new Error(`Network or parsing error: ${err.message}`);
