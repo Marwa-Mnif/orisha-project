@@ -2,13 +2,13 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Dna, MapPin, Globe } from "lucide-react";
 import { useOneCharacter } from "../hooks/useOneCharacter";
-import FullPageLoader from "../components/FullPageLoader";
-import ErrorPage from "../components/ErrorPage";
+import FullPageLoader from "./FullPageLoader";
+import ErrorPage from "./ErrorPage";
 import React from "react";
 import { getIdFromUrl } from "../utils";
-import { BackButton } from "./BackButton";
-import { EpisodesList } from "./EpisodesList";
-import FavoriteButton from "./FavoriteButton";
+import { BackButton } from "../components/BackButton";
+import { EpisodesList } from "../components/EpisodesList";
+import FavoriteButton from "../components/FavoriteButton";
 
 export default function PokemonDetails() {
   const { id } = useParams<{ id: string }>();

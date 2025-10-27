@@ -6,8 +6,8 @@ import Sidebar from "./Sidebar";
 import { Filters } from "../types/filters";
 import Search from "../components/Search";
 import { useDebouncedSearch } from "../hooks/useDebouncedSearch";
-import FullPageLoader from "./FullPageLoader";
-import ErrorPage from "./ErrorPage";
+import FullPageLoader from "../pages/FullPageLoader";
+import ErrorPage from "../pages/ErrorPage";
 
 export default function PokemonList() {
   const [page, setPage] = useState(1);

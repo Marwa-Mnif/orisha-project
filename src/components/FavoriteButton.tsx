@@ -1,6 +1,6 @@
 import React from "react";
-import { useFavorites } from "../context/FavoritesContext";
 import { Character } from "../types/character";
+import { useFavorites } from "../hooks/useFavourites";
 
 interface FavoriteButtonProps {
   characterId: number;

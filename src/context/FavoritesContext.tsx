@@ -1,14 +1,8 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-} from "react";
+import React, { createContext, useState, useEffect, ReactNode } from "react";
 import type { Character } from "../types/character";
 import { FavoritesContextType } from "../types/favouriteContext";
 
-const FavoritesContext = createContext<FavoritesContextType | undefined>(
+export const FavoritesContext = createContext<FavoritesContextType | undefined>(
   undefined
 );
 
@@ -50,11 +44,4 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
       {children}
     </FavoritesContext.Provider>
   );
-};
-
-export const useFavorites = (): FavoritesContextType => {
-  const context = useContext(FavoritesContext);
-  if (!context)
-    throw new Error("useFavorites must be used within a FavoritesProvider");
-  return context;
 };

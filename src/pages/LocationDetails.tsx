@@ -2,8 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { useLocationDetails } from "../hooks/useLocationDetails";
 import { Loader2, MapPin, Globe, Users } from "lucide-react";
 import React from "react";
-import ErrorPage from "./ErrorPage";
-import { BackButton } from "./BackButton";
+import ErrorPage from "../pages/ErrorPage";
+import { BackButton } from "../components/BackButton";
 
 export default function LocationDetails() {
   const { id } = useParams<{ id: string }>();
@@ -53,7 +53,7 @@ export default function LocationDetails() {
             <p className="tw-font-semibold tw-text-gray-600">Residents:</p>
             {locationData.residents.length > 0 ? (
               <ul className="tw-list-disc tw-ml-6 tw-text-gray-800 tw-space-y-1">
-                {locationData.residents.slice(0, 10).map((url) => {
+                {locationData.residents.slice(0, 10).map((url: string) => {
                   const id = url?.split("/").pop();
                   return (
                     <li key={id}>

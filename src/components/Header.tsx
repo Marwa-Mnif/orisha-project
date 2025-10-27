@@ -23,7 +23,7 @@ export default function Header() {
         </div>
         <div className="tw-flex tw-items-center tw-justify-center tw-border-2 tw-border-white tw-rounded-full tw-px-6 tw-h-12 tw-bg-gray-200 hover:tw-bg-gray-300 tw-transition tw-duration-300 tw-cursor-pointer">
           <a
-            href="#"
+            href="/favourites"
             className="tw-text-white tw-font-bold tw-text-2xl tw-select-none"
           >
             Favoris

@@ -70,11 +70,10 @@ export default function PokemonItem({ character }: PokemItemProps) {
             <h3 className="tw-text-body-large tw-font-britanica tw-font-bold tw-text-black-background">
               {character?.name}
             </h3>
-            <span className="tw-text-body-large tw-font-medium tw-text-grey"></span>
           </div>
           <p className="tw-text-body-small tw-mt-3 tw-line-clamp-3 tw-text-left tw-text-grey"></p>
         </div>
-        <div className="tw-flex tw-flex-row {% unless  product.template_suffix == ''  %} tw-justify-center {% else  %} tw-justify-end {% endunless %} tw-gap-2">
+        <div className="tw-flex tw-flex-row  tw-justify-end tw-gap-2">
           <div className="tw-flex tw-items-center tw-self-end tw-pt-2">
             <Link
               to={`/character/${character.id}`}
