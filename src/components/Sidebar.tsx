@@ -1,5 +1,6 @@
 import React from "react";
 import { Filters } from "../types/filters";
+import { FunctionalButton } from "./FunctionalButton";
 
 type SidebarProps = {
   filters: Filters;
@@ -11,12 +12,19 @@ export default function Sidebar({ filters, onChange }: SidebarProps) {
   const speciesOptions = ["Human", "Alien", "unknown"];
   const genderOptions = ["Male", "Female", "Genderless", "unknown"];
 
-  const handleToggle = (field: keyof Filters, value: string) => {
+  function handleToggle(field: keyof Filters, value: string) {
     onChange({
       ...filters,
       [field]: filters[field] === value ? undefined : value,
     });
-  };
+  }
+  function resetFilters() {
+    onChange({
+      gender: undefined,
+      status: undefined,
+      species: undefined,
+    });
+  }
 
   return (
     <div className="tw-mx-auto  tw-sticky tw-px-4 tw-basis-[21.5%] lg:tw-block">
@@ -74,6 +82,12 @@ export default function Sidebar({ filters, onChange }: SidebarProps) {
             </label>
           ))}
         </div>
+        <button
+          onClick={resetFilters}
+          className="tw-text-blue-500 tw-text-sm hover:tw-underline"
+        >
+          Reset Filters
+        </button>
       </div>
     </div>
   );

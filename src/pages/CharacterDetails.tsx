@@ -22,7 +22,7 @@ export default function PokemonDetails() {
   console.log("character3003", character);
   return (
     <div className="tw-container tw-mx-auto tw-px-4 tw-py-10 tw-max-w-4xl">
-      <BackButton label="Back to All Characters List" url="/" />
+      <BackButton label="Back" />
       <Title title="Exploring the DNA of the Multiverse" />
       <motion.div
         className="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-overflow-hidden tw-flex tw-flex-col md:tw-flex-row"

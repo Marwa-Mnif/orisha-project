@@ -30,7 +30,7 @@ export default function PokemonList() {
 
   return (
     <div className="tw-pt-header tw-bg-grey-faded">
-      <div className="tw-flex tw-w-full tw-flex-col tw-items-start tw-justify-between tw-self-stretch tw-px-6 tw-pb-6 tw-pt-10 lg:tw-flex-row lg:tw-p-18 lg:tw-py-10">
+      <div className="tw-flex tw-w-full tw-flex-col tw-items-start tw-justify-between tw-self-stretch tw-p-4 lg:tw-px-6 lg:tw-pb-6 lg:tw-pt-10 lg:tw-flex-row lg:tw-p-18 lg:tw-py-10">
         <Title title="Meet the Multiverse’s Finest" />
       </div>
       <div className="tw-flex tw-items-center tw-justify-center tw-pt-6">

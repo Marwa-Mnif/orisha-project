@@ -10,7 +10,7 @@ type PokemItemProps = {
 export default function PokemonItem({ character }: PokemItemProps) {
   return (
     <div className=" tw-flex-1 tw-relative  tw-w-full tw-flex-col tw-rounded-[2rem] tw-border-2 tw-border-transparent tw-p-2 hover:tw-border-grey-faint hover:tw-bg-white hover:tw-shadow-sm">
-      <div className="tw-relative tw-flex tw-aspect-[0.9] lg:tw-aspect-[0.8] tw-w-full tw-shrink-0 tw-flex-col tw-overflow-hidden tw-rounded-3xl tw-bg-faint-grey-1">
+      <div className="tw-relative tw-flex tw-aspect-[0.9] lg:tw-aspect-[0.8] tw-w-full tw-shrink-0 tw-flex-col tw-rounded-3xl tw-bg-faint-grey-1">
         <div className="tw-relative tw-w-full tw-object-cover">
           <img
             className="tw-w-full tw-object-cover"
@@ -18,10 +18,7 @@ export default function PokemonItem({ character }: PokemItemProps) {
             alt={character?.name}
           />
         </div>
-        <div className="tw-absolute tw-top-2 tw-right-2">
-          <FavoriteButton characterId={character.id} character={character} />
-        </div>
-        <div className="tw-flex tw-p-1 tw-pt-3 tw-right-2 tw-flex-row  tw-z-[5]  tw-group tw-gap-1  tw-bottom-6  tw-items-center tw-justify-center">
+        <div className="tw-flex  tw-m-3  tw-flex-row  tw-z-[5]  tw-group tw-gap-1    tw-items-center tw-justify-center">
           <div
             className={`tw-px-2 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium ${
               character.status === "Alive"
@@ -62,6 +59,9 @@ export default function PokemonItem({ character }: PokemItemProps) {
           >
             {character.gender}
           </div>
+        </div>
+        <div className="tw-absolute tw-top-2 tw-right-2">
+          <FavoriteButton characterId={character.id} character={character} />
         </div>
       </div>
       <div className="tw-flex tw-h-full tw-w-full tw-flex-col tw-justify-between tw-gap-2">
