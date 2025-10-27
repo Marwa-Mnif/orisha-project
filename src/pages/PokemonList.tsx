@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import PokemonItem from "./PokemItem";
+import PokemonItem from "../components/PokemItem";
 import Pagination from "../components/Pagination";
 import { useCharacters } from "../hooks/useCharacters";
-import Sidebar from "./Sidebar";
+import Sidebar from "../components/Sidebar";
 import { Filters } from "../types/filters";
 import Search from "../components/Search";
 import { useDebouncedSearch } from "../hooks/useDebouncedSearch";
-import FullPageLoader from "../pages/FullPageLoader";
-import ErrorPage from "../pages/ErrorPage";
+import FullPageLoader from "./FullPageLoader";
+import ErrorPage from "./ErrorPage";
 
 export default function PokemonList() {
   const [page, setPage] = useState(1);
@@ -25,7 +25,7 @@ export default function PokemonList() {
   );
   if (loading) return <FullPageLoader />;
   if (error || !characters)
-    return <ErrorPage message="Failed to load characters. 😢" />;
+    return <ErrorPage message="No character available 😢" />;
 
   return (
     <div className="tw-pt-header tw-bg-grey-faded">
@@ -34,7 +34,7 @@ export default function PokemonList() {
           Rick And Morty Characters
         </h1>
       </div>
-      <div className="tw-flex tw-items-center tw-justify-center">
+      <div className="tw-flex tw-items-center tw-justify-center tw-pt-6">
         <Search search={search} setSearch={setSearch} />
       </div>
       <div className="tw-flex tw-w-full tw-flex-col tw-px-6 tw-pb-10 tw-pt-6 lg:tw-flex-row lg:tw-gap-10 lg:tw-px-12 lg:tw-py-8 xl:tw-px-18">
@@ -54,7 +54,7 @@ export default function PokemonList() {
           ))}
         </div>
       </div>
-      <div className="tw-m-4">
+      <div className="tw-p-4">
         <Pagination
           currentPage={page}
           totalPages={totalPages}

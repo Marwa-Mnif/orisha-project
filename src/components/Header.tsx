@@ -1,35 +1,67 @@
+import { Link, NavLink } from "react-router-dom";
+import { Heart, Home, Users } from "lucide-react";
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="tw-flex tw-items-center tw-justify-center tw-gap-6 tw-bg-blue-600 tw-h-24 tw-w-full tw-shadow-md tw-px-4">
-      <div className="tw-flex tw-items-center tw-justify-center tw-border-2 tw-border-white tw-rounded-full tw-px-6 tw-h-12 tw-bg-gray-200 hover:tw-bg-gray-300 tw-transition tw-duration-300 tw-cursor-pointer">
+    <header className="tw-bg-white tw-shadow-md tw-sticky tw-top-0 tw-z-50">
+      <div className="tw-max-w-6xl tw-mx-auto tw-flex tw-items-center tw-justify-between tw-px-6 tw-py-4">
         <Link
           to="/"
-          className="tw-text-white tw-font-bold tw-text-2xl tw-select-none"
+          className="tw-flex tw-items-center tw-gap-2 tw-text-blue-600 hover:tw-text-blue-700 tw-transition-colors"
         >
-          Characters
+          <img
+            src="/src/assets/Logo.jpg"
+            alt="Rick & Morty Portal"
+            className="tw-w-8 tw-h-8 tw-rounded-full tw-shadow-sm"
+          />
+          <span className="tw-text-2xl tw-font-bold">Rick & Morty</span>
         </Link>
+
+        <nav className="tw-flex tw-items-center tw-gap-6">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `tw-flex tw-items-center tw-gap-1 tw-font-medium ${
+                isActive
+                  ? "tw-text-blue-600"
+                  : "tw-text-gray-700 hover:tw-text-blue-600"
+              }`
+            }
+          >
+            <Home className="tw-w-5 tw-h-5" />
+            <span>Home</span>
+          </NavLink>
+
+          <NavLink
+            to="/characters"
+            className={({ isActive }) =>
+              `tw-flex tw-items-center tw-gap-1 tw-font-medium ${
+                isActive
+                  ? "tw-text-blue-600"
+                  : "tw-text-gray-700 hover:tw-text-blue-600"
+              }`
+            }
+          >
+            <Users className="tw-w-5 tw-h-5" />
+            <span>Characters</span>
+          </NavLink>
+
+          <NavLink
+            to="/favourites"
+            className={({ isActive }) =>
+              `tw-flex tw-items-center tw-gap-1 tw-font-medium ${
+                isActive
+                  ? "tw-text-blue-600"
+                  : "tw-text-gray-700 hover:tw-text-blue-600"
+              }`
+            }
+          >
+            <Heart className="tw-w-5 tw-h-5" />
+            <span>Favorites</span>
+          </NavLink>
+        </nav>
       </div>
-      <nav className="tw-flex tw-items-center tw-gap-4">
-        <div className="tw-flex tw-items-center tw-justify-center tw-border-2 tw-border-white tw-rounded-full tw-px-6 tw-h-12 tw-bg-gray-200 hover:tw-bg-gray-300 tw-transition tw-duration-300 tw-cursor-pointer">
-          <a
-            href="#"
-            className="tw-text-white tw-font-bold tw-text-2xl tw-select-none"
-          >
-            Accueil
-          </a>
-        </div>
-        <div className="tw-flex tw-items-center tw-justify-center tw-border-2 tw-border-white tw-rounded-full tw-px-6 tw-h-12 tw-bg-gray-200 hover:tw-bg-gray-300 tw-transition tw-duration-300 tw-cursor-pointer">
-          <a
-            href="/favourites"
-            className="tw-text-white tw-font-bold tw-text-2xl tw-select-none"
-          >
-            Favoris
-          </a>
-        </div>
-      </nav>
     </header>
   );
 }

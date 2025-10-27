@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 import React from "react";
 import { Character } from "../types/character";
@@ -16,7 +15,7 @@ export default function FavoritesPage() {
         <p className="tw-text-gray-600 tw-text-lg tw-font-medium">
           You have no favorites yet.
         </p>
-        <BackButton label="Back to Characters List" />
+        <BackButton label="Back" />
       </div>
     );
   }
@@ -26,7 +25,7 @@ export default function FavoritesPage() {
       <div className=" tw-py-12 tw-max-w-5xl tw-mx-auto">
         <div className="tw-mx-center tw-mt-4">
           {" "}
-          <BackButton label="Back to Characters List" />
+          <BackButton label="Back" />
         </div>
         <h1 className="tw-text-4xl tw-font-bold tw-text-blue-600 tw-mb-8 tw-text-center">
           Your Favorite Characters
