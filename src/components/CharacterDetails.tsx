@@ -1,15 +1,15 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Dna, ArrowLeft, MapPin, Globe } from "lucide-react";
+import { Dna, MapPin, Globe } from "lucide-react";
 import { useOneCharacter } from "../hooks/useOneCharacter";
 import FullPageLoader from "../components/FullPageLoader";
 import ErrorPage from "../components/ErrorPage";
 import React from "react";
 import { getIdFromUrl } from "../utils";
+import { BackButton } from "./BackButton";
 
 export default function PokemonDetails() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const { character, loading, error } = useOneCharacter(Number(id));
 
   if (loading) return <FullPageLoader />;
@@ -18,13 +18,7 @@ export default function PokemonDetails() {
   console.log("character3003", character);
   return (
     <div className="tw-container tw-mx-auto tw-px-4 tw-py-10 tw-max-w-4xl">
-      <button
-        onClick={() => navigate(-1)}
-        className="tw-flex tw-items-center tw-gap-2 tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors tw-mb-6"
-      >
-        <ArrowLeft className="tw-w-5 tw-h-5" />
-        <span className="tw-text-sm">Back</span>
-      </button>
+      <BackButton label="Back to characters" url="/" />
 
       <motion.div
         className="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-overflow-hidden tw-flex tw-flex-col md:tw-flex-row"

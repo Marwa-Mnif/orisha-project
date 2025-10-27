@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { useLocationDetails } from "../hooks/useLocationDetails";
 import { Loader2, MapPin, Globe, Users } from "lucide-react";
 import React from "react";
+import ErrorPage from "./ErrorPage";
+import { BackButton } from "./BackButton";
 
 export default function LocationDetails() {
   const { id } = useParams<{ id: string }>();
@@ -17,15 +19,8 @@ export default function LocationDetails() {
   if (error || !locationData)
     return (
       <div className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-h-[80vh]">
-        <p className="tw-text-red-600 tw-text-lg tw-font-semibold">
-          ⚠️ Unable to load location details
-        </p>
-        <Link
-          to="/"
-          className="tw-mt-4 tw-text-blue-600 hover:tw-underline tw-font-medium"
-        >
-          ← Back to list
-        </Link>
+        <ErrorPage message="Unable to load location details 😢" />
+        <BackButton label="Back to characters" url="/" />
       </div>
     );
 
@@ -79,12 +74,7 @@ export default function LocationDetails() {
         </div>
       </div>
 
-      <Link
-        to="/"
-        className="tw-mt-6 tw-text-blue-600 hover:tw-underline tw-font-semibold"
-      >
-        ← Back to characters
-      </Link>
+      <BackButton label="Back to characters" url="/" />
     </div>
   );
 }

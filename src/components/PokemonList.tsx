@@ -25,7 +25,7 @@ export default function PokemonList() {
   );
   if (loading) return <FullPageLoader />;
   if (error || !characters)
-    return <ErrorPage message="Failed to load characters 😢" />;
+    return <ErrorPage message="Failed to load characters. 😢" />;
 
   return (
     <div className="tw-pt-header tw-bg-grey-faded">
