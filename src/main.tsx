@@ -5,15 +5,18 @@ import "./style.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CharacterDetail from "./components/CharacterDetails";
 import LocationDetails from "./components/LocationDetails";
+import { FavoritesProvider } from "./context/FavoritesContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/character/:id" element={<CharacterDetail />} />
-        <Route path="/location/:id" element={<LocationDetails />} />
-      </Routes>
-    </BrowserRouter>
+    <FavoritesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/character/:id" element={<CharacterDetail />} />
+          <Route path="/location/:id" element={<LocationDetails />} />
+        </Routes>
+      </BrowserRouter>
+    </FavoritesProvider>
   </React.StrictMode>
 );

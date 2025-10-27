@@ -3,6 +3,7 @@ import { Character } from "../types/character";
 import FavoriteButton from "./FavoriteButton";
 import { Link } from "react-router-dom";
 import gotoSvg from "../assets/goto.svg";
+
 type PokemItemProps = {
   character: Character;
 };
@@ -18,7 +19,7 @@ export default function PokemonItem({ character }: PokemItemProps) {
           />
         </div>
         <div className="tw-absolute tw-top-2 tw-right-2">
-          <FavoriteButton characterId={character.id} />
+          <FavoriteButton characterId={character.id} character={character} />
         </div>
         <div className="tw-flex tw-p-1 tw-pt-3 tw-right-2 tw-flex-row  tw-z-[5]  tw-group tw-gap-1  tw-bottom-6  tw-items-center tw-justify-center">
           <div

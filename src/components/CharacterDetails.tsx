@@ -8,6 +8,7 @@ import React from "react";
 import { getIdFromUrl } from "../utils";
 import { BackButton } from "./BackButton";
 import { EpisodesList } from "./EpisodesList";
+import FavoriteButton from "./FavoriteButton";
 
 export default function PokemonDetails() {
   const { id } = useParams<{ id: string }>();
@@ -28,12 +29,15 @@ export default function PokemonDetails() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <div className="tw-w-full md:tw-w-1/2 tw-bg-gray-100 tw-flex tw-items-start tw-justify-center">
+        <div className="tw-relative tw-w-full md:tw-w-1/2 tw-bg-gray-100 tw-flex tw-items-start tw-justify-center">
           <img
             src={character.image}
             alt={character.name}
             className="tw-object-cover tw-w-full tw-h-full tw-max-h-[500px]"
           />
+          <div className="tw-absolute tw-top-2 tw-right-2">
+            <FavoriteButton characterId={character.id} character={character} />
+          </div>
         </div>
 
         <div className="tw-p-8 tw-flex-1 tw-flex tw-flex-col tw-justify-center tw-gap-4">

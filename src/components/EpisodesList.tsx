@@ -48,7 +48,7 @@ export function EpisodesList({ character }: EpisodesListProps) {
                 onClick={() =>
                   setShowedEpisodes(episodes.length - showedEpisodes)
                 }
-                className="tw-text-gray-500 tw-text-sm hover:tw-underline"
+                className="tw-text-blue-500 tw-text-sm hover:tw-underline"
               >
                 Hide episodes
               </button>
