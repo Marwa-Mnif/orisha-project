@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import React from "react";
 import { Character } from "../types/character";
-import PokemonItem from "../components/PokemItem";
+import CharacterItem from "../components/CharacterItem";
 import { useFavorites } from "../hooks/useFavourites";
 import { BackButton } from "../components/BackButton";
 import { Title } from "../components/Title";
@@ -32,7 +32,7 @@ export default function FavoritesPage() {
 
         <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-place-items-center lg:tw-grid-cols-4 tw-gap-1">
           {favorites.map((character: Character) => (
-            <PokemonItem character={character} />
+            <CharacterItem character={character} />
           ))}
         </div>
       </div>

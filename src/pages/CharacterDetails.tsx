@@ -10,8 +10,9 @@ import { BackButton } from "../components/BackButton";
 import { EpisodesList } from "../components/EpisodesList";
 import FavoriteButton from "../components/FavoriteButton";
 import { Title } from "../components/Title";
+import { CharacterMainProperties } from "../components/CharacterMainProperties";
 
-export default function PokemonDetails() {
+export default function CharacterDetails() {
   const { id } = useParams<{ id: string }>();
   const { character, loading, error } = useOneCharacter(Number(id));
 
@@ -19,7 +20,6 @@ export default function PokemonDetails() {
   if (error || !character)
     return <ErrorPage message="Unable to load character details 😢" />;
 
-  console.log("character3003", character);
   return (
     <div className="tw-container tw-mx-auto tw-px-4 tw-py-10 tw-max-w-4xl">
       <BackButton label="Back" />
@@ -47,47 +47,7 @@ export default function PokemonDetails() {
           </h1>
 
           <div className="tw-flex tw-flex-wrap tw-gap-2">
-            <span
-              className={`tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium ${
-                character.status === "Alive"
-                  ? "tw-bg-green-100 tw-text-green-700"
-                  : character.status === "Dead"
-                  ? "tw-bg-red-100 tw-text-red-700"
-                  : "tw-bg-gray-100 tw-text-gray-700"
-              }`}
-            >
-              {character.status}
-            </span>
-            <span
-              className={`tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium ${
-                character.species === "Human"
-                  ? "tw-bg-blue-100 tw-text-blue-700"
-                  : character.species === "Alien"
-                  ? "tw-bg-purple-100 tw-text-purple-700"
-                  : character.species === "Robot"
-                  ? "tw-bg-slate-100 tw-text-slate-700"
-                  : "tw-bg-yellow-100 tw-text-yellow-700"
-              }`}
-            >
-              {character.species}
-            </span>
-            {character.gender && (
-              <span
-                className={`tw-px-3 tw-py-1 tw-rounded-full tw-text-sm tw-font-medium ${
-                  character.gender === "Female"
-                    ? "tw-bg-pink-100 tw-text-pink-700"
-                    : character.gender === "Male"
-                    ? "tw-bg-cyan-100 tw-text-cyan-700"
-                    : character.gender === "unknown"
-                    ? "tw-bg-neutral-100 tw-text-neutral-700"
-                    : character.gender === "Genderless"
-                    ? "tw-bg-orange-600 tw-text-orange-700"
-                    : "tw-bg-emerald-400 tw-text-emerald-700"
-                }`}
-              >
-                {character.gender}
-              </span>
-            )}
+            <CharacterMainProperties character={character} />
           </div>
           <div className="tw-flex tw-items-center tw-gap-2">
             <Dna className="tw-h-5 tw-w-5 tw-text-green-600" />

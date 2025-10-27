@@ -38,7 +38,7 @@ export function EpisodesList({ character }: EpisodesListProps) {
             {episodes.length > showedEpisodes && (
               <button
                 onClick={() => setShowedEpisodes(episodes.length)}
-                className="tw-text-gray-500 tw-text-sm hover:tw-underline"
+                className="tw-text-blue-500 tw-text-sm hover:tw-underline"
               >
                 See {episodes.length - showedEpisodes} episodes
               </button>

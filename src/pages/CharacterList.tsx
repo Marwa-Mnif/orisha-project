@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PokemonItem from "../components/PokemItem";
+import CharacterItem from "../components/CharacterItem";
 import Pagination from "../components/Pagination";
 import { useCharacters } from "../hooks/useCharacters";
 import Sidebar from "../components/Sidebar";
@@ -9,8 +9,9 @@ import { useDebouncedSearch } from "../hooks/useDebouncedSearch";
 import FullPageLoader from "./FullPageLoader";
 import ErrorPage from "./ErrorPage";
 import { Title } from "../components/Title";
+import { BackButton } from "../components/BackButton";
 
-export default function PokemonList() {
+export default function CharacterList() {
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState<Filters>({
     status: undefined,
@@ -30,8 +31,11 @@ export default function PokemonList() {
 
   return (
     <div className="tw-pt-header tw-bg-grey-faded">
-      <div className="tw-flex tw-w-full tw-flex-col tw-items-start tw-justify-between tw-self-stretch tw-p-4 lg:tw-px-6 lg:tw-pb-6 lg:tw-pt-10 lg:tw-flex-row lg:tw-p-18 lg:tw-py-10">
-        <Title title="Meet the Multiverse’s Finest" />
+      <div className="tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center tw-self-stretch tw-p-4 lg:tw-px-6 lg:tw-pb-6 lg:tw-pt-10 lg:tw-flex-row lg:tw-p-18 lg:tw-py-10">
+        <Title
+          title="Meet the Multiverse’s Finest"
+          suppClassName="tw-text-center"
+        />
       </div>
       <div className="tw-flex tw-items-center tw-justify-center tw-pt-6">
         <Search search={search} setSearch={setSearch} />
@@ -41,7 +45,6 @@ export default function PokemonList() {
           <Sidebar
             filters={filters}
             onChange={(updatedFilters) => {
-              console.log("Filters3003", updatedFilters);
               setFilters(updatedFilters);
             }}
           />
@@ -49,7 +52,7 @@ export default function PokemonList() {
 
         <div className=" tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-6 tw-place-items-center">
           {characters?.map((character) => (
-            <PokemonItem character={character} />
+            <CharacterItem character={character} />
           ))}
         </div>
       </div>

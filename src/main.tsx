@@ -7,7 +7,7 @@ import CharacterDetail from "./pages/CharacterDetails";
 import LocationDetails from "./pages/LocationDetails";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import FavouritesList from "./pages/FavouritesList";
-import PokemonList from "./pages/PokemonList";
+import CharacterList from "./pages/CharacterList";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/characters" element={<PokemonList />} />
+          <Route path="/characters" element={<CharacterList />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
           <Route path="/location/:id" element={<LocationDetails />} />
           <Route path="/favourites" element={<FavouritesList />} />

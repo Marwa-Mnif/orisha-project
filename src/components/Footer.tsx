@@ -27,28 +27,29 @@ export default function Footer() {
         </div>
 
         <div className="tw-flex tw-justify-center tw-gap-6 tw-mt-6 md:tw-mt-0">
-          <a
-            href="https://github.com/Marwa-Mnif/orisha-project"
+          <Link
+            to="https://github.com/Marwa-Mnif/orisha-project"
             target="_blank"
             rel="noopener noreferrer"
             className="tw-text-gray-600 hover:tw-text-blue-600 tw-transition-colors"
           >
             <Github className="tw-w-5 tw-h-5" />
-          </a>
-          <a
-            href="www.linkedin.com/in/marwa-mnif"
+          </Link>
+          <Link
+            to="https://www.linkedin.com/in/marwa-mnif"
             target="_blank"
             rel="noopener noreferrer"
             className="tw-text-gray-600 hover:tw-text-blue-600 tw-transition-colors"
           >
             <Linkedin className="tw-w-5 tw-h-5" />
-          </a>
-          <a
-            href="mailto:marwa.mnif@hotmail.com"
+          </Link>
+          <Link
+            to="mailto:marwa.mnif@hotmail.com"
+            target="_blank"
             className="tw-text-gray-600 hover:tw-text-blue-600 tw-transition-colors"
           >
             <Mail className="tw-w-5 tw-h-5" />
-          </a>
+          </Link>
         </div>
       </div>
 
