@@ -34,14 +34,8 @@ export default function Sidebar() {
 
   const handleToggle = useCallback(
     (field: keyof Filters, value: string) => {
-      const current = filters[field]?.[0];
-      let newValue: string | undefined;
-      if (current === value) {
-        newValue = undefined;
-      } else {
-        newValue = value;
-      }
-
+      const current = filters[field];
+      const newValue = current === value ? undefined : value;
       const newSearchParams = new URLSearchParams(searchParams);
       if (newValue) {
         newSearchParams.set(field, newValue);
