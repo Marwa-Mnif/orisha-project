@@ -60,8 +60,8 @@ export default function Sidebar() {
 
   return (
     <div className="tw-mx-auto  tw-sticky tw-px-4 tw-basis-[21.5%] lg:tw-block">
-      <div className="tw-flex tw-flex-col tw-gap-3 tw-items-center tw-justify-center ">
-        <div className=" tw-flex tw-flex-col  tw-items-start tw-justify-center  lg:tw-w-64 tw-p-4 tw-sticky tw-top-20 tw-max-w-[calc(100vw-1rem)]  lg:tw-max-h-[calc(100vh-1rem)] tw-overflow-auto  tw-rounded-3xl tw-border-[2px] tw-bg-white tw-text-grey-copy   tw-min-w-min ">
+      <div className="tw-sticky tw-top-20 tw-flex tw-flex-col tw-gap-3 tw-items-center tw-justify-center ">
+        <div className=" tw-flex tw-flex-col  tw-items-start tw-justify-center  lg:tw-w-64 tw-p-4  tw-max-w-[calc(100vw-1rem)]  lg:tw-max-h-[calc(100vh-1rem)] tw-overflow-auto  tw-rounded-3xl tw-border-[2px] tw-bg-white tw-text-grey-copy   tw-min-w-min ">
           <div className=" tw-flex md:tw-flex-row tw-gap-3 lg:tw-gap-0 md:tw-gap-3 tw-flex-row lg:tw-flex-col">
             <div>
               <h3 className="tw-font-bold tw-mb-2">Status</h3>
@@ -80,7 +80,6 @@ export default function Sidebar() {
                 </label>
               ))}
             </div>
-
             <div>
               <h3 className="tw-font-bold tw-mb-2">Species</h3>
               {speciesOptions.map((species) => (
@@ -98,7 +97,6 @@ export default function Sidebar() {
                 </label>
               ))}
             </div>
-
             <div>
               <h3 className="tw-font-bold tw-mb-2">Gender</h3>
               {genderOptions.map((gender) => (
@@ -117,7 +115,6 @@ export default function Sidebar() {
               ))}
             </div>
           </div>
-
           <div className="tw-mx-auto">
             <button
               onClick={resetFilters}
