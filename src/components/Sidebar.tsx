@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Filters } from "../types/filters";
 
 type SidebarProps = {
@@ -11,12 +11,12 @@ export default function Sidebar({ filters, onChange }: SidebarProps) {
   const speciesOptions = ["Human", "Alien", "unknown"];
   const genderOptions = ["Male", "Female", "Genderless", "unknown"];
 
-  function handleToggle(field: keyof Filters, value: string) {
+  const handleToggle = useCallback((field: keyof Filters, value: string) => {
     onChange({
       ...filters,
       [field]: filters[field] === value ? undefined : value,
     });
-  }
+  }, []);
   function resetFilters() {
     onChange({
       gender: undefined,

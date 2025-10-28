@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 type PaginationProps = {
   currentPage: number;
@@ -19,13 +19,17 @@ function Pagination({
   if (currentPage < totalPages - 1) pages.push("...");
   if (totalPages > 1) pages.push(totalPages);
 
+  const handleOnPageChange = useCallback((page: number) => {
+    onPageChange(page);
+  }, []);
+
   return (
     <div className="tw-flex tw-gap-2 tw-justify-center tw-mt-4">
       <button
         className={`tw-px-3 tw-py-1 tw-rounded tw-bg-gray-200 hover:tw-bg-gray-300 ${
           currentPage === 1 ? "tw-hidden" : ""
         }`}
-        onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
+        onClick={() => handleOnPageChange(Math.max(currentPage - 1, 1))}
       >
         Prev
       </button>
@@ -39,7 +43,7 @@ function Pagination({
                 ? "tw-bg-blue-500 tw-text-white"
                 : "tw-bg-gray-200 hover:tw-bg-gray-300"
             }`}
-            onClick={() => onPageChange(page)}
+            onClick={() => handleOnPageChange(page)}
           >
             {page}
           </button>
@@ -54,7 +58,9 @@ function Pagination({
         className={`tw-px-3 tw-py-1 tw-rounded tw-bg-gray-200 hover:tw-bg-gray-300 ${
           currentPage === totalPages ? "tw-hidden" : ""
         }`}
-        onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
+        onClick={() =>
+          handleOnPageChange(Math.min(currentPage + 1, totalPages))
+        }
         disabled={currentPage === totalPages}
       >
         Next
