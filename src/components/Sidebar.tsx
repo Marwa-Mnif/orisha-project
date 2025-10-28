@@ -1,33 +1,50 @@
 import React, { useCallback } from "react";
 import { Filters } from "../types/filters";
 import { useSearchParams } from "react-router-dom";
+import {
+  ALIEN_SPECIES,
+  ALIVE_STATUS,
+  DEAD_STATUS,
+  FEMALE_GENDER,
+  GENDERLESS_GENDER,
+  HUMAN_SPECIES,
+  MALE_GENDER,
+  UNKNOWN_GENDER,
+  UNKNOWN_SPECIES,
+  UNKNOWN_STATUS,
+} from "../constants";
 
 export default function Sidebar() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const filters: Filters = {
-    status: searchParams.get("status")?.split(","),
-    species: searchParams.get("species")?.split(","),
-    gender: searchParams.get("gender")?.split(","),
+    status: searchParams.get("status") ?? undefined,
+    species: searchParams.get("species") ?? undefined,
+    gender: searchParams.get("gender") ?? undefined,
   };
 
-  const statusOptions = ["Alive", "Dead", "unknown"];
-  const speciesOptions = ["Human", "Alien", "unknown"];
-  const genderOptions = ["Male", "Female", "Genderless", "unknown"];
+  const statusOptions = [ALIVE_STATUS, DEAD_STATUS, UNKNOWN_STATUS];
+  const speciesOptions = [HUMAN_SPECIES, ALIEN_SPECIES, UNKNOWN_SPECIES];
+  const genderOptions = [
+    MALE_GENDER,
+    FEMALE_GENDER,
+    GENDERLESS_GENDER,
+    UNKNOWN_GENDER,
+  ];
 
   const handleToggle = useCallback(
     (field: keyof Filters, value: string) => {
-      const current = filters[field] ?? [];
-      let newValues: string[];
-      if (current.includes(value)) {
-        newValues = current.filter((v) => v !== value);
+      const current = filters[field]?.[0];
+      let newValue: string | undefined;
+      if (current === value) {
+        newValue = undefined;
       } else {
-        newValues = [...current, value];
+        newValue = value;
       }
 
       const newSearchParams = new URLSearchParams(searchParams);
-      if (newValues.length > 0) {
-        newSearchParams.set(field, newValues.join(","));
+      if (newValue) {
+        newSearchParams.set(field, newValue);
       } else {
         newSearchParams.delete(field);
       }
@@ -42,10 +59,10 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="tw-mx-auto tw-sticky tw-px-4 tw-basis-[21.5%] lg:tw-block">
-      <div className="tw-flex tw-flex-col tw-gap-3 tw-items-center tw-justify-center">
-        <div className="tw-flex tw-flex-col tw-items-start tw-justify-center lg:tw-w-64 tw-p-4 tw-sticky tw-top-20 tw-max-w-[calc(100vw-1rem)] lg:tw-max-h-[calc(100vh-1rem)] tw-overflow-auto tw-rounded-3xl tw-border-[2px] tw-bg-white tw-text-grey-copy tw-min-w-min">
-          <div className="tw-flex md:tw-flex-row tw-gap-3 lg:tw-gap-0 md:tw-gap-3 tw-flex-row lg:tw-flex-col">
+    <div className="tw-mx-auto  tw-sticky tw-px-4 tw-basis-[21.5%] lg:tw-block">
+      <div className="tw-flex tw-flex-col tw-gap-3 tw-items-center tw-justify-center ">
+        <div className=" tw-flex tw-flex-col  tw-items-start tw-justify-center  lg:tw-w-64 tw-p-4 tw-sticky tw-top-20 tw-max-w-[calc(100vw-1rem)]  lg:tw-max-h-[calc(100vh-1rem)] tw-overflow-auto  tw-rounded-3xl tw-border-[2px] tw-bg-white tw-text-grey-copy   tw-min-w-min ">
+          <div className=" tw-flex md:tw-flex-row tw-gap-3 lg:tw-gap-0 md:tw-gap-3 tw-flex-row lg:tw-flex-col">
             <div>
               <h3 className="tw-font-bold tw-mb-2">Status</h3>
               {statusOptions.map((status) => (

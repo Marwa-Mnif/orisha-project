@@ -20,9 +20,9 @@ function CharacterList() {
 
   const filters: Filters = useMemo(
     () => ({
-      status: searchParams.get("status")?.split(","),
-      species: searchParams.get("species")?.split(","),
-      gender: searchParams.get("gender")?.split(","),
+      status: searchParams.get("status") ?? undefined,
+      species: searchParams.get("species") ?? undefined,
+      gender: searchParams.get("gender") ?? undefined,
     }),
     [searchParams]
   );
