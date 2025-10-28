@@ -43,14 +43,7 @@ export default {
       }
     },
     extend: {
-      backgroundImage: {
-        'yellow-energy-gradient-to-r':
-          'linear-gradient(270deg, #EDFF00 2.33%, rgba(237, 255, 0, 0.30) 97.67%)',
-        'yellow-energy-gradient-to-l':
-          'linear-gradient(90deg, #EDFF00 2.33%, rgba(237, 255, 0, 0.30) 97.67%)',
-        'yellow-energy-gradient-fade':
-          'linear-gradient(270deg, rgba(237, 255, 0, 0.30) 2.33%, rgba(237, 255, 0, 0.30) 97.67%);'
-      },
+      
       spacing: {
         ...sizes
       },
@@ -206,7 +199,6 @@ export default {
           DEFAULT: '#ffffff'
         },
         yellow: {
-          energy: '#EDFF00',
           mid: '#C3D100',
           deep: '#7C8600'
         },
@@ -318,24 +310,6 @@ export default {
             transform: 'rotate(-360deg)'
           }
         },
-        'energy-pulse-dot': {
-          '0%': {
-            transform: 'scale(0)',
-            opacity: '1'
-          },
-          '100%': {
-            transform: 'scale(3)',
-            opacity: '0'
-          }
-        },
-        'energy-powerline': {
-          '0%': {
-            strokeDashoffset: '100%'
-          },
-          '100%': {
-            strokeDashoffset: '0'
-          }
-        }
       },
       animation: {
         'infinite-translate-x':
@@ -356,10 +330,6 @@ export default {
         'bounce-m': 'bounceM 1s linear infinite',
         rotate: 'rotate 4s linear infinite',
         'rotate-reverse': 'rotateReverse 4s linear infinite',
-        'energy-pulse-dot':
-          '2s ease-in-out 0s infinite normal none running energy-pulse-dot',
-        'energy-powerline':
-          '20s linear 0s infinite normal none running energy-powerline'
       }
     }
   },
