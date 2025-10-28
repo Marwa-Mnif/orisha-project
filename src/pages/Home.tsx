@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Star, Users, Search } from "lucide-react";
 import React from "react";
+import {
+  CHARACTERS_MENU_ITEM,
+  FAVORITES_MENU_ITEM,
+  HOME_PAGE_DESCRIPTION,
+  SEARCH_MENU_ITEM,
+} from "../constants";
 
 export default function Home() {
   return (
@@ -12,8 +18,7 @@ export default function Home() {
         </h1>
 
         <p className="tw-text-gray-600 tw-text-lg md:tw-text-xl tw-max-w-2xl tw-mx-auto">
-          Explore all your favorite characters, their origins, and adventures —
-          and don’t forget to save the ones you love most 💚.
+          {HOME_PAGE_DESCRIPTION}
         </p>
 
         <div className="tw-flex tw-flex-wrap tw-gap-4 tw-justify-center tw-mt-8">
@@ -22,7 +27,7 @@ export default function Home() {
             className="tw-flex tw-items-center tw-gap-2 tw-bg-blue-600 hover:tw-bg-blue-700 tw-text-white tw-font-semibold tw-px-6 tw-py-3 tw-rounded-full tw-shadow-md tw-transition-transform hover:tw-scale-105"
           >
             <Users className="tw-w-5 tw-h-5" />
-            View Characters
+            {CHARACTERS_MENU_ITEM}
           </Link>
 
           <Link
@@ -30,7 +35,7 @@ export default function Home() {
             className="tw-flex tw-items-center tw-gap-2 tw-bg-yellow-400 hover:tw-bg-yellow-500 tw-text-gray-800 tw-font-semibold tw-px-6 tw-py-3 tw-rounded-full tw-shadow-md tw-transition-transform hover:tw-scale-105"
           >
             <Star className="tw-w-5 tw-h-5" />
-            My Favorites
+            {FAVORITES_MENU_ITEM}
           </Link>
 
           <Link
@@ -38,7 +43,7 @@ export default function Home() {
             className="tw-flex tw-items-center tw-gap-2 tw-bg-green-500 hover:tw-bg-green-600 tw-text-white tw-font-semibold tw-px-6 tw-py-3 tw-rounded-full tw-shadow-md tw-transition-transform hover:tw-scale-105"
           >
             <Search className="tw-w-5 tw-h-5" />
-            Search
+            {SEARCH_MENU_ITEM}
           </Link>
         </div>
       </div>

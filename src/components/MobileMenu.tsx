@@ -1,6 +1,11 @@
 import { Menu, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  CHARACTERS_MENU_ITEM,
+  FAVORITES_MENU_ITEM,
+  HOME_MENU_ITEM,
+} from "../constants";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,19 +42,19 @@ export default function MobileMenu() {
         >
           <div className="tw-bg-white/20 tw-backdrop-blur-xl tw-rounded-2xl tw-shadow-2xl tw-p-6 tw-mt-2 tw-animate-slide-down tw-w-56 tw-text-gray-600 tw-font-semibold">
             <Link to="/" className="tw-block tw-py-2 hover:tw-text-yellow-300">
-              Home
+              {HOME_MENU_ITEM}
             </Link>
             <Link
               to="/characters"
               className="tw-block tw-py-2 hover:tw-text-yellow-300"
             >
-              Characters
+              {CHARACTERS_MENU_ITEM}
             </Link>
             <Link
               to="/favourites"
               className="tw-block tw-py-2 hover:tw-text-yellow-300"
             >
-              Favoris
+              {FAVORITES_MENU_ITEM}
             </Link>
           </div>
         </div>

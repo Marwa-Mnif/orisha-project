@@ -1,6 +1,11 @@
 import { Heart, Home, Users } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {
+  CHARACTERS_MENU_ITEM,
+  FAVORITES_MENU_ITEM,
+  HOME_MENU_ITEM,
+} from "../constants";
 
 export default function DesktopMenu() {
   return (
@@ -16,7 +21,7 @@ export default function DesktopMenu() {
         }
       >
         <Home className="tw-w-5 tw-h-5" />
-        <span>Home</span>
+        <span>{HOME_MENU_ITEM}</span>
       </NavLink>
 
       <NavLink
@@ -30,7 +35,7 @@ export default function DesktopMenu() {
         }
       >
         <Users className="tw-w-5 tw-h-5" />
-        <span>Characters</span>
+        <span>{CHARACTERS_MENU_ITEM}</span>
       </NavLink>
 
       <NavLink
@@ -44,7 +49,7 @@ export default function DesktopMenu() {
         }
       >
         <Heart className="tw-w-5 tw-h-5" />
-        <span>Favorites</span>
+        <span>{FAVORITES_MENU_ITEM}</span>
       </NavLink>
     </nav>
   );
