@@ -62,7 +62,7 @@ export default function CharacterDetails() {
           <div className="tw-flex tw-items-center tw-gap-2">
             <Globe className="tw-h-5 tw-w-5 tw-text-indigo-600" />
             <p>
-              <span className="tw-font-semibold">Origine : </span>
+              <span className="tw-font-semibold">Origin : </span>
               {character.origin?.url &&
               character.origin?.name &&
               character.origin?.name != "" ? (

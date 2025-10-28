@@ -11,10 +11,8 @@ export default function ErrorState({
       </div>
 
       <h2 className="tw-text-xl tw-font-semibold tw-text-gray-800 tw-mb-2">
-        Oops! Something went wrong
+        Oops! {message}
       </h2>
-
-      <p className="tw-text-gray-500 tw-max-w-md">{message}</p>
 
       <button
         onClick={() => window.location.reload()}

@@ -29,7 +29,7 @@ export default function CharacterItem({ character }: CharacterItemProps) {
       <div className="tw-flex tw-h-full tw-w-full tw-flex-col tw-justify-between tw-gap-2">
         <div className="tw-flex tw-flex-col tw-px-4 tw-pt-4">
           <div className="tw-flex tw-items-center tw-justify-between tw-gap-4">
-            <h3 className="tw-text-body-medium-desktop sm:tw-text-body-medium-mobile tw-font-bold tw-font-inter tw-tracking-wide tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-purple-500 tw-via-pink-500 tw-to-red-500">
+            <h3 className="tw-text-body-small-desktop sm:tw-text-body-small-mobile tw-font-bold tw-font-inter tw-tracking-wide tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-purple-500 tw-via-pink-500 tw-to-red-500">
               {character?.name}
             </h3>
           </div>
