@@ -3,7 +3,7 @@ export type TitleProps = {
   title: string;
   suppClassName?: string;
 };
-export function Title({ title, suppClassName = "" }: TitleProps) {
+function Title({ title, suppClassName = "" }: TitleProps) {
   return (
     <h1
       className={`${
@@ -15,3 +15,4 @@ export function Title({ title, suppClassName = "" }: TitleProps) {
     </h1>
   );
 }
+export default React.memo(Title);

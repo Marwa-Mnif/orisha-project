@@ -6,10 +6,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CharacterDetail from "./pages/CharacterDetails";
 import LocationDetails from "./pages/LocationDetails";
 import { FavoritesProvider } from "./context/FavoritesContext";
-import FavouritesList from "./pages/FavouritesList";
 import CharacterList from "./pages/CharacterList";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import FavoritesList from "./pages/FavoritesList";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/characters" element={<CharacterList />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
           <Route path="/location/:id" element={<LocationDetails />} />
-          <Route path="/favourites" element={<FavouritesList />} />
+          <Route path="/favourites" element={<FavoritesList />} />
         </Routes>
         <Footer />
       </BrowserRouter>

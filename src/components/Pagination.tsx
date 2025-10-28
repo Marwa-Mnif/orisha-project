@@ -5,7 +5,7 @@ type PaginationProps = {
   totalPages: number;
   onPageChange: (page: number) => void;
 };
-export default function Pagination({
+function Pagination({
   currentPage,
   totalPages,
   onPageChange,
@@ -62,3 +62,4 @@ export default function Pagination({
     </div>
   );
 }
+export default React.memo(Pagination);

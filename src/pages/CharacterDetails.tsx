@@ -6,11 +6,11 @@ import FullPageLoader from "./FullPageLoader";
 import ErrorPage from "./ErrorPage";
 import React from "react";
 import { getIdFromUrl } from "../utils";
-import { BackButton } from "../components/BackButton";
+import BackButton from "../components/BackButton";
 import { EpisodesList } from "../components/EpisodesList";
 import FavoriteButton from "../components/FavoriteButton";
-import { Title } from "../components/Title";
-import { CharacterMainProperties } from "../components/CharacterMainProperties";
+import Title from "../components/Title";
+import CharacterMainProperties from "../components/CharacterMainProperties";
 
 export default function CharacterDetails() {
   const { id } = useParams<{ id: string }>();

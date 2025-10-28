@@ -6,7 +6,7 @@ export type BackButtonProps = {
   label?: string;
   url?: string;
 };
-export function BackButton({ label = "Back", url }: BackButtonProps) {
+function BackButton({ label = "Back", url }: BackButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -33,3 +33,4 @@ export function BackButton({ label = "Back", url }: BackButtonProps) {
     </div>
   );
 }
+export default React.memo(BackButton);

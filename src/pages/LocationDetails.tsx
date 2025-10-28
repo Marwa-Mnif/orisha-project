@@ -3,8 +3,8 @@ import { useLocationDetails } from "../hooks/useLocationDetails";
 import { Loader2, MapPin, Globe, Users } from "lucide-react";
 import React from "react";
 import ErrorPage from "../pages/ErrorPage";
-import { BackButton } from "../components/BackButton";
-import { Title } from "../components/Title";
+import BackButton from "../components/BackButton";
+import Title from "../components/Title";
 
 export default function LocationDetails() {
   const { id } = useParams<{ id: string }>();

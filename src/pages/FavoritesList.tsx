@@ -3,10 +3,10 @@ import React from "react";
 import { Character } from "../types/character";
 import CharacterItem from "../components/CharacterItem";
 import { useFavorites } from "../hooks/useFavourites";
-import { BackButton } from "../components/BackButton";
-import { Title } from "../components/Title";
+import BackButton from "../components/BackButton";
+import Title from "../components/Title";
 
-export default function FavoritesPage() {
+function FavoritesList() {
   const { favorites } = useFavorites();
 
   if (favorites.length === 0) {
@@ -23,7 +23,7 @@ export default function FavoritesPage() {
 
   return (
     <>
-      <div className=" tw-py-12 tw-max-w-5xl tw-mx-auto">
+      <div className=" tw-py-12 tw-max-w-5xl tw-mx-auto tw-px-12">
         <div className="tw-mx-center tw-mt-4">
           {" "}
           <BackButton label="Back" />
@@ -31,11 +31,12 @@ export default function FavoritesPage() {
         <Title title="Across All Universes — Your Picks" />
 
         <div className="tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-place-items-center lg:tw-grid-cols-4 tw-gap-1">
-          {favorites.map((character: Character) => (
-            <CharacterItem character={character} />
+          {favorites.map((character: Character, index) => (
+            <CharacterItem key={index} character={character} />
           ))}
         </div>
       </div>
     </>
   );
 }
+export default React.memo(FavoritesList);

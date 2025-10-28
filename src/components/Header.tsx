@@ -1,6 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
-import { Heart, Home, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import React from "react";
+
+import MobileMenu from "./MobileMenu";
+import DesktopMenu from "./DesktopMenu";
 
 export default function Header() {
   return (
@@ -18,49 +20,8 @@ export default function Header() {
           <span className="tw-text-2xl tw-font-bold">Rick & Morty</span>
         </Link>
 
-        <nav className="tw-flex tw-items-center tw-gap-6">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `tw-flex tw-items-center tw-gap-1 tw-font-medium ${
-                isActive
-                  ? "tw-text-blue-600"
-                  : "tw-text-gray-700 hover:tw-text-blue-600"
-              }`
-            }
-          >
-            <Home className="tw-w-5 tw-h-5" />
-            <span>Home</span>
-          </NavLink>
-
-          <NavLink
-            to="/characters"
-            className={({ isActive }) =>
-              `tw-flex tw-items-center tw-gap-1 tw-font-medium ${
-                isActive
-                  ? "tw-text-blue-600"
-                  : "tw-text-gray-700 hover:tw-text-blue-600"
-              }`
-            }
-          >
-            <Users className="tw-w-5 tw-h-5" />
-            <span>Characters</span>
-          </NavLink>
-
-          <NavLink
-            to="/favourites"
-            className={({ isActive }) =>
-              `tw-flex tw-items-center tw-gap-1 tw-font-medium ${
-                isActive
-                  ? "tw-text-blue-600"
-                  : "tw-text-gray-700 hover:tw-text-blue-600"
-              }`
-            }
-          >
-            <Heart className="tw-w-5 tw-h-5" />
-            <span>Favorites</span>
-          </NavLink>
-        </nav>
+        <DesktopMenu />
+        <MobileMenu />
       </div>
     </header>
   );

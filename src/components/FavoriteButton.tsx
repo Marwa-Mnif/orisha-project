@@ -7,10 +7,7 @@ interface FavoriteButtonProps {
   character: Character;
 }
 
-export default function FavoriteButton({
-  characterId,
-  character,
-}: FavoriteButtonProps) {
+function FavoriteButton({ characterId, character }: FavoriteButtonProps) {
   const { toggleFavorite, isFavorite } = useFavorites();
 
   return (
@@ -25,3 +22,4 @@ export default function FavoriteButton({
     </button>
   );
 }
+export default React.memo(FavoriteButton);

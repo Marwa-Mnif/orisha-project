@@ -8,10 +8,9 @@ import Search from "../components/Search";
 import { useDebouncedSearch } from "../hooks/useDebouncedSearch";
 import FullPageLoader from "./FullPageLoader";
 import ErrorPage from "./ErrorPage";
-import { Title } from "../components/Title";
-import { BackButton } from "../components/BackButton";
+import Title from "../components/Title";
 
-export default function CharacterList() {
+function CharacterList() {
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState<Filters>({
     status: undefined,
@@ -51,8 +50,8 @@ export default function CharacterList() {
         </div>
 
         <div className=" tw-grid tw-grid-cols-1 sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-6 tw-place-items-center">
-          {characters?.map((character) => (
-            <CharacterItem character={character} />
+          {characters?.map((character, index) => (
+            <CharacterItem key={index} character={character} />
           ))}
         </div>
       </div>
@@ -66,3 +65,4 @@ export default function CharacterList() {
     </div>
   );
 }
+export default React.memo(CharacterList);

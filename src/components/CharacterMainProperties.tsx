@@ -3,9 +3,7 @@ import { Character } from "../types/character";
 export type CharacterMainPropertiesProps = {
   character: Character;
 };
-export function CharacterMainProperties({
-  character,
-}: CharacterMainPropertiesProps) {
+function CharacterMainProperties({ character }: CharacterMainPropertiesProps) {
   return (
     <>
       <div
@@ -51,3 +49,4 @@ export function CharacterMainProperties({
     </>
   );
 }
+export default React.memo(CharacterMainProperties);

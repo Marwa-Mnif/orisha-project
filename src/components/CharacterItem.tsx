@@ -3,12 +3,12 @@ import { Character } from "../types/character";
 import FavoriteButton from "./FavoriteButton";
 import { Link } from "react-router-dom";
 import gotoSvg from "../assets/goto.svg";
-import { CharacterMainProperties } from "./CharacterMainProperties";
+import CharacterMainProperties from "./CharacterMainProperties";
 
 type CharacterItemProps = {
   character: Character;
 };
-export default function CharacterItem({ character }: CharacterItemProps) {
+function CharacterItem({ character }: CharacterItemProps) {
   return (
     <div className=" tw-flex-1 tw-relative  tw-w-full tw-flex-col tw-rounded-[2rem] tw-border-2 tw-border-transparent tw-p-2 hover:tw-border-grey-faint hover:tw-bg-white hover:tw-shadow-sm">
       <div className="tw-relative tw-flex tw-aspect-[0.9] lg:tw-aspect-[0.8] tw-w-full tw-shrink-0 tw-flex-col tw-rounded-3xl tw-bg-faint-grey-1">
@@ -52,3 +52,4 @@ export default function CharacterItem({ character }: CharacterItemProps) {
     </div>
   );
 }
+export default React.memo(CharacterItem);

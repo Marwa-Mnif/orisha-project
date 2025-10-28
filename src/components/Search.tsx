@@ -5,7 +5,7 @@ type SearchProps = {
   search: string;
   setSearch: (search: string) => void;
 };
-export default function Search({ search, setSearch }: SearchProps) {
+function Search({ search, setSearch }: SearchProps) {
   return (
     <div className="tw-mx-12 lg:tw-px-0 tw-relative  lg:tw-w-80">
       <input
@@ -27,3 +27,4 @@ export default function Search({ search, setSearch }: SearchProps) {
     </div>
   );
 }
+export default React.memo(Search);
