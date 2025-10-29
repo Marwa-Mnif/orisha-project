@@ -1,0 +1,18 @@
+import React from "react";
+export type TitleProps = {
+  title: string;
+  suppClassName?: string;
+};
+function Title({ title, suppClassName = "" }: TitleProps) {
+  return (
+    <h1
+      className={`${
+        "tw-text-4xl md:tw-text-5xl tw-font-extrabold tw-text-transparent tw-bg-clip-text tw-bg-gradient-to-r tw-from-blue-600 tw-to-green-500 tw-text-center tw-my-6 lg:tw-my-10 tw-drop-shadow-lg tw-tracking-wide " +
+        suppClassName
+      }`}
+    >
+      {title}
+    </h1>
+  );
+}
+export default React.memo(Title);

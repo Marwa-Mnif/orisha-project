@@ -1,0 +1,1 @@
+export type Filters = { status?: string ; species?: string; gender?: string };
