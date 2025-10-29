@@ -32,6 +32,7 @@ Une application **React + TypeScript + TailwindCSS** permettant d’explorer les
 
 - git clone https://github.com/Marwa-Mnif/orisha-project.git
 - cd orisha-project
+- Basculer sur la branche Dev-branch: git fecth && git checkout dev-branch
 - Create .env.local file with this content: VITE_API_BASE_URL=https://rickandmortyapi.com/api
 - npm install (si erreur try npm install --legacy-peer-deps)
 - npm run dev ou npx vite
