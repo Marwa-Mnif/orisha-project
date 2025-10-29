@@ -3,6 +3,10 @@
 A **React + TypeScript + TailwindCSS** application that lets you explore **Rick and Morty** characters with **pagination**, **live search**, and an **interactive sidebar**.
 
 ---
+## Prérequis:
+- Node.js (v16+) / vérifier : node --version
+- npm (v8+) / vérifier : npm --version
+- Git / vérifier : git --version
 
 ## Fonctionnalités
 
@@ -20,17 +24,20 @@ A **React + TypeScript + TailwindCSS** application that lets you explore **Rick 
 - **TypeScript**
 - **TailwindCSS** 
 - **Rick and Morty API** → [https://rickandmortyapi.com/](https://rickandmortyapi.com/)
+-  **Vite** 
 
 ---
 
 ##  Installation & configuration
 
-git clone https://github.com/Marwa-Mnif/orisha-project.git
-cd orisha-project
-Create .env.local file with this content: VITE_API_BASE_URL=https://rickandmortyapi.com/api
-npm install (si erreur try npm install --legacy-peer-deps)
-npm run dev ou npx vite
-Access the project on localhost:5173
+- git clone https://github.com/Marwa-Mnif/orisha-project.git
+- cd orisha-project
+- Create .env.local file with this content: VITE_API_BASE_URL=https://rickandmortyapi.com/api
+- npm install (si erreur try npm install --legacy-peer-deps)
+- npm run dev ou npx vite
+- Access the project on localhost:5173
+  
+---
 
 ## Choix techniques:
 **Choix du framework & bundler**: 
