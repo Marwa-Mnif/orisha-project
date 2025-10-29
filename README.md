@@ -1,6 +1,6 @@
 #  Rick and Morty Explorer
 
-A **React + TypeScript + TailwindCSS** application that lets you explore **Rick and Morty** characters with **pagination**, **live search**, and an **interactive sidebar**.
+Une application **React + TypeScript + TailwindCSS** permettant d’explorer les personnages de **Rick and Morty**, avec **pagination**, **recherche en temps réel**, et une **barre latérale interactive**.
 
 ---
 ## Prérequis:
@@ -10,11 +10,11 @@ A **React + TypeScript + TailwindCSS** application that lets you explore **Rick 
 
 ## Fonctionnalités
 
--  **Real-time search** by character name  
--  **Built-in pagination** with next / previous page management  
--  **Modern and responsive UI** powered by TailwindCSS  
--  **Interactive sidebar** for navigation and optional filters  
--  **Environment configuration** via `.env.local` file  
+-  **Recherche en temps réel** par nom de personnage  
+-  **Pagination intégrée** avec gestion des pages suivante / précédente  
+-  **Interface moderne et responsive** grâce à TailwindCSS  
+-  **Sidebar interactive** pour les filtres optionnels  
+-  **Configuration des variables d’environnement** via le fichier `.env.local`
 
 ---
 
@@ -41,7 +41,7 @@ A **React + TypeScript + TailwindCSS** application that lets you explore **Rick 
 
 ## Choix techniques:
 **Choix du framework & bundler**: 
-React + TypeScript (strict)** : typage fort, requis par l’énoncé, qualité et ergonomie.
+React + TypeScript (strict) : typage fort, requis par l’énoncé, qualité et ergonomie.
 
 **Styling** : 
 Tailwind CSS avec préfixe tw- : utility-first pour prototypage rapide, cleanness des classes (préfixe pour éviter collisions).
@@ -52,14 +52,14 @@ lucide-react pour icônes : léger, React-friendly.
 
 **Architecture (hooks / components / context)**
 
-* Hooks dédiés pour fetching et logique :
+** Hooks dédiés pour fetching et logique :**
 - useCharacters(params) — pagination, filtre, recherche.
 - useCharacterDetails(id) — détails, loading, error.
 - useEpisodes(episodeUrls) — récupère tous les épisodes en 1 appel (ids groupés).
 - useDebounce — pour la recherche.
 - Components réutilisables : CharacterItem, FavoriteButton, Pagination, FullPageLoader, FullPageError, Sidebar, BackButton, Title, Search, -  CharacterMainProperties, BackToTopButton, etc.
 
-* Context (FavoritesContext):
+** Context (FavoritesContext):**
 - Gère une liste favorites: Character[], toggleFavorite(character), isFavorite(id).
 - Initialisé depuis localStorage (lazy init) et persiste via useEffect.
 => Raison : permet la synchro reactive entre composants (navbar badge, favorites page) sans Redux.
