@@ -18,8 +18,7 @@ A **React + TypeScript + TailwindCSS** application that lets you explore **Rick 
 
 - **React**
 - **TypeScript**
-- **TailwindCSS**
-- **Axios** for API calls  
+- **TailwindCSS** 
 - **Rick and Morty API** → [https://rickandmortyapi.com/](https://rickandmortyapi.com/)
 
 ---
